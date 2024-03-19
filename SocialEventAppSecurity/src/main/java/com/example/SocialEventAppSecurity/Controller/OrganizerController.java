@@ -8,7 +8,7 @@ import com.example.SocialEventAppSecurity.Model.*;
 import com.example.SocialEventAppSecurity.ServiceInterface.EventServicesInterface;
 import com.example.SocialEventAppSecurity.ServiceInterface.LocationServicesInterface;
 import com.example.SocialEventAppSecurity.ServiceInterface.OrganizerServicesInterface;
-import com.example.SocialEventAppSecurity.Validation.OrganizerValidation;
+import com.example.SocialEventAppSecurity.Validation.LoginFormValidation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,7 +33,7 @@ public class OrganizerController {
     private LocationServicesInterface locationServices;
     int OId;
     @Autowired
-    private OrganizerValidation organizerValidation;
+    private LoginFormValidation organizerValidation;
 
     @RequestMapping("/home")
     public String home() {
@@ -125,6 +125,9 @@ public class OrganizerController {
         List<BookingEventModel> bookingEventModels=organizerServices.upcomingBookings();
         System.out.println(bookingEventModels);
         map.addAttribute("msg","LIST OF ONGOING AND UPCOMING BOOKING EVENTS");
+        if(bookingEventModels.isEmpty()){
+            map.addAttribute("message","NO UPCOMING AND ONGOING BOOKINGS FOUND");
+        }
         map.addAttribute("bookingEvents",bookingEventModels);
         return "ViewUpcomingEvents";
     }
@@ -133,6 +136,9 @@ public class OrganizerController {
         List<BookingEventModel> bookingEventModels=organizerServices.pastBooking();
         System.out.println(bookingEventModels);
         map.addAttribute("msg","LIST OF PAST BOOKING EVENTS");
+        if(bookingEventModels.isEmpty()){
+            map.addAttribute("message","NO PAST BOOKINGS FOUND");
+        }
         map.addAttribute("bookingEvents",bookingEventModels);
         return "ViewUpcomingEvents";
     }

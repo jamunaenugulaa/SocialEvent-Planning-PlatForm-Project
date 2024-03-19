@@ -7,7 +7,7 @@ import com.example.SocialEventAppSecurity.Model.EventOrganizerModel;
 import com.example.SocialEventAppSecurity.Model.LoginForm;
 import com.example.SocialEventAppSecurity.ServiceInterface.AdminServiceInterface;
 import com.example.SocialEventAppSecurity.ServiceInterface.OrganizerServicesInterface;
-import com.example.SocialEventAppSecurity.Validation.CustomerValidation;
+import com.example.SocialEventAppSecurity.Validation.LoginFormValidation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +27,7 @@ public class AdminController {
     @Autowired
     private OrganizerServicesInterface organizerServices;
     @Autowired
-    private CustomerValidation adminValidation;
+    private LoginFormValidation loginFormValidation;
     private int adminId;
     private String message;
     @RequestMapping("/Admin")
@@ -62,7 +62,7 @@ public class AdminController {
     }
     @RequestMapping("/AdminLoginCheck")
     public String customerLoginCheck(@Valid LoginForm loginForm, BindingResult result, ModelMap map) {
-        adminValidation.validate(loginForm, result);
+        loginFormValidation.validate(loginForm, result);
         if (result.hasErrors()) {
 
             return "AdminLoginForm";

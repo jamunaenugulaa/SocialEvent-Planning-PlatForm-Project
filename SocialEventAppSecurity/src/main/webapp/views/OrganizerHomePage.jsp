@@ -55,7 +55,6 @@
          <a href="viewEvents" class="nav-link">VIEW ALL EVENTS</a><br><br><br>
          <a href="upcomingEvents" class="nav-link">UPCOMING EVENTS</a><br><br><br>
        <a href="PastEvents" class="nav-link">PAST EVENTS</a><br><br><br>
-    <a href="viewProjects" class="nav-link">PROFILE SETTING</a><br><br><br>
 
     <a href="home" class="nav-link">LOGOUT</a><br>    </center>
 </div>

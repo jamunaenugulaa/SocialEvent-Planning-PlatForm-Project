@@ -27,6 +27,7 @@
 <center>
 
     <h1>${msg}</h1>
+    <h2>${message}</h2>
 
     <table border="1">
         <thead>

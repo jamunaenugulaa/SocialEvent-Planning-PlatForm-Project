@@ -50,11 +50,8 @@
 
         <a href="viewLocationForCustomer" class="nav-link">SEARCH LOCATIONS</a><br><br><br>
           <a href="ViewLocationC" class="nav-link">VIEW ALL LOCATIONS</a><br><br><br>
-
         <a href="ViewLocationC" class="nav-link">BOOK THE HALL</a><br><br><br>
          <a href="viewEventsOfCustomer" class="nav-link">VIEW YOUR EVENTS</a><br><br><br>
-    <a href="profileSetting" class="nav-link">PROFILE SETTING</a><br><br><br>
-
     <a href="home" class="nav-link">LOGOUT</a><br>    </center>
 </div>
 </body>

@@ -12,7 +12,8 @@ import com.example.SocialEventAppSecurity.Services.BookingServices;
 import com.example.SocialEventAppSecurity.Services.CustomerServices;
 import com.example.SocialEventAppSecurity.Services.EventServices;
 import com.example.SocialEventAppSecurity.Services.LocationServices;
-import com.example.SocialEventAppSecurity.Validation.CustomerValidation;
+
+import com.example.SocialEventAppSecurity.Validation.LoginFormValidation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class CustomerController {
     @Autowired
     private BookingServiceInterfcae bookingServices;
     @Autowired
-    private CustomerValidation customerValidation;
+    private LoginFormValidation loginFormValidation;
     int cid;
 
 
@@ -88,7 +89,7 @@ public class CustomerController {
     }
     @RequestMapping("/customerLoginCheck")
     public String customerLoginCheck(@Valid LoginForm loginForm, BindingResult result, ModelMap map) {
-        customerValidation.validate(loginForm, result);
+        loginFormValidation.validate(loginForm, result);
         if (result.hasErrors()) {
 
             return "CustomerLoginForm";

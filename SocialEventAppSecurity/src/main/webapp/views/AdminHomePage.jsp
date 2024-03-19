@@ -50,7 +50,6 @@
 
        <a href="OrganizerRegister" class="nav-link">ADD ORGANIZER</a><br><br><br>
           <a href="ViewOrganizers" class="nav-link">VIEW ALL ORGANIZERS</a><br><br><br>
-    <a href="profileSetting" class="nav-link">PROFILE SETTING</a><br><br><br>
     <a href="home" class="nav-link">LOGOUT</a><br>    </center>
 </div>
 </body>
